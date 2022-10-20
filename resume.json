@@ -1,0 +1,42 @@
+{      
+    "Name":"Audilakshmi",
+    "Email":"tulasiaudilakshmi@gmail.com",
+    "phoneno":7095446700,
+    "Carrer_objective":"To obtain a challenging position that enables me to enhance my knowledge, skills, capabilities that I learned from my education and as working professional.",
+    "Education":[ {
+                        "Course":"Btech",
+                        "University":"IIIT(RGUKT-RKVALLEY)",
+                        "Branch":"ECE",
+                        "Percentage":82
+                        
+                    },
+                    {
+                        "Course":"Intermediate",
+                        "University":"IIIT(RGUKT-RKVALLEY)",
+                        "Percentage":85
+                    },
+                    {
+                        "Course":"SSC",
+                        "University":"ZPHSBATTEPADU",
+                        "Percentage":100
+                    }
+                ],
+     "SKILLSET":{
+                    "LANGUAGES":["Html","Css","Javascript","Java","C","Python","Sql"],
+                    "IDETools":["Viscode","Myeclipse"],
+                    	"RDBMS":["Oracle11g", "MySQL"]
+                  },
+    "Hobbies":["playingchess","listeningmusic","solving mathpuzzeles"],
+    "Personaldetails":{
+        "perminentaddress":{
+          
+            "district":"SPSRnellore",
+            "state":"Andhrapradesh"
+        },
+        "GENDER":"Female",
+        "Nationality":"Indian",
+        "Status":"Single",
+        "languages":["English","Hindi","Telugu"]
+
+    }
+}

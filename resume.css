@@ -1,0 +1,26 @@
+#head1{
+    background-color: gray;
+    color:aqua;
+    font-style:italic;
+    text-align: center;
+}
+h3{
+    background-color:tomato;
+    text-align:center;
+}
+p{
+    color:green
+}
+#details{
+    margin-top: 0px;
+    margin-left:100px;
+    font-size:15px;
+}
+#slist{
+    margin-left:50px
+    
+}
+#d1,#d2{
+    margin-left: 50px;
+}
+

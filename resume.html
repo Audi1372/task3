@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="resume.css">
+</head>
+<body>
+    <h1 id="head1">RESUME</h1>
+    <div>
+       <p id="p0">Name:</p>
+       <p id="p1">Email:</p>
+       <p id="p2">Phoneno:</p>
+    </div>
+    <div>
+        <h3 id="head2">CAREEROBJECTIVE</h3>
+        <p id="p3"></p>
+    </div>
+    <div>
+        <h3 id="Education">Education</h3>
+        <ul id="elist"></ul>
+    </div>
+    <div>
+        <h3 id="skills">Skillset</h3>
+        <h4>Softwarelanguages:</h4>
+        <ul id="slist"></ul>
+        <h4>Ide tools:</h4>
+        <ul id="d1"></ul>
+        <h4>Rdbms:</h4>
+        <ul id="d2"></ul>
+    </div>
+    <div>
+        <h3 id="hobbies">Hobbies</h3>
+        <ul id="hlist"></ul>
+    </div>
+    <div>
+        <h3 id="pdetails">Personaldetails</h3>
+        <h4>Languagesknown:</h4>
+        <ul id="details"></ul>
+        <h4 id="n1">NATIONALITY</h4>
+        <h4 id="n2">Status</h4>
+        <h4 id="n3">GENDER</h4>
+        <h4 id="n4">district</h4>
+        <h4 id="n5">state</h4>
+        
+    </div>
+    <script>
+       
+        let e_list=""
+        let l_list=""
+       let h_list=" "
+       let sl_list=""
+       let i_list=" "
+       let r_list=" "
+        fetch("./resume.json")
+        .then(Response =>Response.json())
+        .then(sdata =>{
+                            sdata.SKILLSET.RDBMS.forEach(x=>{
+                                console.log(x)
+                                r_list +=`<li>${x}</li>`
+                            document.getElementById("d2").innerHTML=r_list
+                            })
+                            sdata.SKILLSET.IDETools.forEach(x=> {
+                            console.log(x)
+                            i_list +=`<li>${x}</li>`
+                            document.getElementById("d1").innerHTML=i_list
+                        })
+    
+                            sdata.SKILLSET.LANGUAGES.forEach(x=>{
+                            console.log(x)
+                            sl_list +=`<li>${x}</li>`
+                            document.getElementById("slist").innerHTML=sl_list
+                        })
+                        
+                        sdata.Hobbies.forEach(x=>{
+                            console.log(x)
+                            h_list +=`<li>${x}</li>`
+                            document.getElementById("hlist").innerHTML=h_list
+                        })
+                        sdata.Personaldetails.languages.forEach(x=>{
+                        console.log(x)
+                        l_list +=`<li>${x}</li>`
+                        document.getElementById("details").innerHTML=l_list
+            })
+                        sdata.Education.forEach(x => {
+                        // console.log(x)
+                        e_list +=`<li>Course:${x.Course}--Persentage:${x.Percentage}</li>`
+                        document.getElementById("elist").innerHTML=e_list
+                        })
+             
+            document.getElementById("p0").innerHTML=`Name:${sdata.Name}`
+            document.getElementById("p1").innerHTML=`Email:${sdata.Email}`
+            document.getElementById("p2").innerHTML=`Email:${sdata.phoneno}`
+            document.getElementById("p3").innerHTML=`${sdata.Carrer_objective}`
+            document.getElementById("n1").innerHTML=`Nationality:${sdata.Personaldetails.Nationality}`
+            document.getElementById("n2").innerHTML=`Status:${sdata.Personaldetails.Status}`
+            document.getElementById("n3").innerHTML=`Gender:${sdata.Personaldetails.GENDER}`
+            document.getElementById("n4").innerHTML=`District:${sdata.Personaldetails.perminentaddress.district}`
+            document.getElementById("n5").innerHTML=`State:${sdata.Personaldetails.perminentaddress.state}` 
+        }
+            )
+             
+            // console.log(sdata.Education)
+         </script>
+
+    
+    
+</body>
+</html>
